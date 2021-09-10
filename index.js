@@ -3,7 +3,7 @@
 const puppeteer = require('puppeteer')
 
 async function openBrowserAndRun() {
-    const browser = await puppeteer.launch({headless: true})
+    const browser = await puppeteer.launch({headless: false})
     const page = await browser.newPage()
     await page.goto("https://cryptoxmr.net/home")
     try {
