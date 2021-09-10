@@ -1,0 +1,23 @@
+{
+  "name": "cryptoxmr-automator",
+  "version": "1.0.0",
+  "description": "Automate CryptoXmr.net claims",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^10.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sparksammy/cryptoxmr-automator.git"
+  },
+  "author": "Samuel Lord",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sparksammy/cryptoxmr-automator/issues"
+  },
+  "homepage": "https://github.com/sparksammy/cryptoxmr-automator#readme"
+}
