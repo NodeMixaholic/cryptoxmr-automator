@@ -37,10 +37,10 @@ async function openBrowserAndRun() {
         console.log("error in my code lol")
     }
     console.log(`As long as this is open, collecting XMR.`)
+    page.setDefaultNavigationTimeout(9999999);
+    await page.waitForNavigation().catch(err => process.exit(404)); //hacky fix lol
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 500)).catch(err => console.log(err)); //just in case ;)
-        page.setDefaultNavigationTimeout(9999999);
-        await page.waitForNavigation().catch(err => process.exit(404)); //hacky fix lol
         try {
             const c = await page.evaluate(() => {
                 async function autoxmr() {
