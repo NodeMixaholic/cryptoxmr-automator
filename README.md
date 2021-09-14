@@ -7,5 +7,5 @@
 5. open index.js in your favorite code editor
 6. change line 11's definition to a string containing your address, not mine.
 7. save it and go back to the command prompt
-8. run "node index.js"
+8. run the "run-hackyfix" for your system, ".bat" for windows systems, ".sh" for mac and gnu/linux
 9. you are now automating your claims on cryptoxmr.net
