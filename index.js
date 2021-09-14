@@ -26,8 +26,10 @@ async function openBrowserAndRun() {
                     var bonusButtonObj = bonusContainerObj.firstElementChild
                     if ( (typeof buttonObj !== 'undefined') && (buttonObj != "")) {
                         getClaim()
+                        location.reload()
                     } else if ((typeof bonusButtonObj !== 'undefined') && (bonusButtonObj != "")) {
                         getBonus()
+                        location.reload()
                     }
                 }
             }
@@ -41,7 +43,12 @@ async function openBrowserAndRun() {
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 500)).catch(err => console.log(err)); //just in case ;)
         page.setDefaultNavigationTimeout(9999999);
-        await page.waitForNavigation().catch(err => process.exit(404)); //hacky fix lol
+        try {
+            let xmr_balance = await page.evaluate(() => document.querySelector('#xmr_balance').innerText);
+            console.log(xmr_balance);
+        } catch {
+            console.log("")
+        }
         try {
             const c = await page.evaluate(() => {
                 async function autoxmr() {
@@ -61,7 +68,7 @@ async function openBrowserAndRun() {
                 autoxmr()
             })
         } catch {
-            console.log("more errors.")
+            console.log("errors. (did you exit out of the page?)")
         }
     }
 
