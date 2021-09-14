@@ -1,2 +1,2 @@
 node index.js
-bash run.sh
+./run.sh
