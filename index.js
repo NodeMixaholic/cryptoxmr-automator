@@ -3,7 +3,7 @@
 const puppeteer = require('puppeteer')
 
 async function openBrowserAndRun() {
-    const browser = await puppeteer.launch({headless: false})
+    const browser = await puppeteer.launch({headless: true})
     const page = await browser.newPage()
     await page.goto("https://cryptoxmr.net/home")
     try {
@@ -26,12 +26,10 @@ async function openBrowserAndRun() {
                     var bonusButtonObj = bonusContainerObj.firstElementChild
                     if (getComputedStyle(containerObj)["display"] != "none") {
                         getClaim()
-                        await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
-                        location.reload()
+                        //await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
+                        //location.reload()
                     } else if (getComputedStyle(bonusContainerObj)["display"] != "none") {
                         getBonus()
-                        await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
-                        location.reload()
                     }
                 }
             }
