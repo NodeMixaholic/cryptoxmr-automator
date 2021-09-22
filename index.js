@@ -24,11 +24,13 @@ async function openBrowserAndRun() {
                     var bonusContainerObj = document.getElementById("bonus_container")
                     var buttonObj = containerObj.firstElementChild
                     var bonusButtonObj = bonusContainerObj.firstElementChild
-                    if ( (typeof buttonObj !== 'undefined') && (buttonObj != "")) {
+                    if (getComputedStyle(containerObj)["display"] != "none") {
                         getClaim()
+                        await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
                         location.reload()
-                    } else if ((typeof bonusButtonObj !== 'undefined') && (bonusButtonObj != "")) {
+                    } else if (getComputedStyle(bonusContainerObj)["display"] != "none") {
                         getBonus()
+                        await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
                         location.reload()
                     }
                 }
@@ -42,7 +44,6 @@ async function openBrowserAndRun() {
     
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 500)).catch(err => console.log(err)); //just in case ;)
-        page.setDefaultNavigationTimeout(9999999);
         try {
             let xmr_balance = await page.evaluate(() => document.querySelector('#xmr_balance').innerText);
             console.log(xmr_balance);
@@ -58,10 +59,14 @@ async function openBrowserAndRun() {
                         var bonusContainerObj = document.getElementById("bonus_container")
                         var buttonObj = containerObj.firstElementChild
                         var bonusButtonObj = bonusContainerObj.firstElementChild
-                        if ( (typeof buttonObj !== 'undefined') && (buttonObj != "")) {
+                        if (getComputedStyle(containerObj)["display"] != "none") {
                             getClaim()
-                        } else if ((typeof bonusButtonObj !== 'undefined') && (bonusButtonObj != "")) {
+                            await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
+                            location.reload()
+                        } else if (getComputedStyle(bonusContainerObj)["display"] != "none") {
                             getBonus()
+                            await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
+                            location.reload()
                         }
                     }
                 }
