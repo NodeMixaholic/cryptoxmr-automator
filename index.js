@@ -26,8 +26,8 @@ async function openBrowserAndRun() {
                     var bonusButtonObj = bonusContainerObj.firstElementChild
                     if (getComputedStyle(containerObj)["display"] != "none") {
                         getClaim()
-                        //await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
-                        //location.reload()
+                        await new Promise(resolve => setTimeout(resolve, 2500)).catch(err => console.log(err));
+                        location.reload()
                     } else if (getComputedStyle(bonusContainerObj)["display"] != "none") {
                         getBonus()
                     }
