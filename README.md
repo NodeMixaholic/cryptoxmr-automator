@@ -9,3 +9,4 @@
 7. save it and go back to the command prompt
 8. run the "run" script for your system, ".bat" for windows systems, ".sh" for mac and gnu/linux
 9. you are now automating your claims on cryptoxmr.net
+10. DO NOT CLICK ANYTHING IN THE CHROMIUM INSTANCE WHILE THE WINDOW IS OPEN.
