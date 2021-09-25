@@ -13,7 +13,7 @@ async function openBrowserAndRun() {
             document.getElementById("registerForm").getElementsByTagName("button")[0].click()
         })
     } catch {
-        console.log("this is fine.")
+        console.log("this is not fine.")
     }
     try {
         const b = await page.evaluate(() => {
@@ -37,6 +37,7 @@ async function openBrowserAndRun() {
         })
     } catch {
         console.log("error in my code lol")
+        process.exit(0)
     }
     console.log(`As long as this is open, collecting XMR.`)
     
