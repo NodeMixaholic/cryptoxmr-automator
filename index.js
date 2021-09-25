@@ -72,6 +72,7 @@ async function openBrowserAndRun() {
             })
         } catch {
             console.log("errors. (did you exit out of the page?)")
+            process.exit(0)
         }
     }
 
