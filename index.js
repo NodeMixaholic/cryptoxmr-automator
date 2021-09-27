@@ -1,6 +1,7 @@
 //Sparksammy's CryptoXMR.net Automator
 //Replace line 11 with YOUR address
 const puppeteer = require('puppeteer')
+var count = 0
 
 async function openBrowserAndRun() {
     const browser = await puppeteer.launch({headless: true})
@@ -74,6 +75,11 @@ async function openBrowserAndRun() {
         } catch {
             console.log("errors. (did you exit out of the page?)")
             process.exit(0)
+        }
+        if (count > 1800) {
+            process.exit(0)
+        } else {
+            count++
         }
     }
 
