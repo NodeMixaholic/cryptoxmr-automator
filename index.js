@@ -51,7 +51,7 @@ async function openBrowserAndRun() {
         process.exit(0)
     }
     console.log(`As long as this is open, collecting XMR.`)
-    
+
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 500)).catch(err => console.log(err)); //just in case ;)
         try {
@@ -94,7 +94,6 @@ async function openBrowserAndRun() {
             })
         } catch {
             console.log("errors. (did you exit out of the page?)")
-            process.exit(0)
         }
         if (count > 2000) {
             process.exit(0)
