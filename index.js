@@ -96,7 +96,7 @@ async function openBrowserAndRun() {
             console.log("errors. (did you exit out of the page?)")
             process.exit(0)
         }
-        if (count > 1800) {
+        if (count > 2000) {
             process.exit(0)
         } else {
             count++
