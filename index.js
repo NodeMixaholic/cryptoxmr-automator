@@ -34,6 +34,16 @@ async function openBrowserAndRun() {
                     }
                 }
             }
+
+            // get partner bonuses automagically
+            for (let i = 1; i < 9; i++) {
+                try {
+                    getPartnerBonus(i)
+                } catch {
+                    console.log(`Partner bonus ${i} is already claimed.`)
+                }
+            }
+            //start the main claim loop
             autoxmr()
         })
     } catch {
@@ -70,6 +80,16 @@ async function openBrowserAndRun() {
                         }
                     }
                 }
+
+                // get partner bonuses automagically
+                for (let i = 1; i < 9; i++) {
+                    try {
+                        getPartnerBonus(i)
+                    } catch {
+                        console.log(`Partner bonus ${i} is already claimed.`)
+                    }
+                }
+                //start the main claim loop
                 autoxmr()
             })
         } catch {
