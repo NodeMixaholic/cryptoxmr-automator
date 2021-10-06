@@ -48,7 +48,6 @@ async function openBrowserAndRun() {
         })
     } catch {
         console.log("error in my code lol")
-        process.exit(0)
     }
     console.log(`As long as this is open, collecting XMR.`)
 
